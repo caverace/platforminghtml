@@ -18,11 +18,11 @@ const blockSize = 60;
 const ctx = canvas.getContext('2d');
 
 // Events
-checkWindow();
-
 window.addEventListener('resize', checkWindow);
 
 // Setup
+checkWindow();
+
 requestAnimationFrame(main);
 
 // Functions
