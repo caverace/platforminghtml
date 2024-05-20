@@ -8,8 +8,8 @@ const rect = canvas.getBoundingClientRect();
 const dvd = new Image();
 dvd.src = 'images/dvd.png';
 
-var u = 1;
-var v = 1;
+var u = 3;
+var v = 3;
 var x = 0;
 var y = 0;
 const blockSize = 60;
@@ -18,12 +18,12 @@ const blockSize = 60;
 const ctx = canvas.getContext('2d');
 
 // Events
+checkWindow();
+
 window.addEventListener('resize', checkWindow);
 
 // Setup
-checkWindow();
-
-const mainInterval = setInterval(main, 0);
+requestAnimationFrame(main);
 
 // Functions
 function checkWindow() {
@@ -55,6 +55,8 @@ function main() {
 
     x += u;
     y += v;
+
+    requestAnimationFrame(main);
 }
 
 function cls() {
